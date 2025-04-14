@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Product Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+
+  <style>
+   header {
+  background-color: #4CAF50;
+  padding: 20px 50px;
+  color:black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-section img {
+  height: 50px;
+  margin-right: 12px;
+}
+
+.brand-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navbar Styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4CAF50;
+  padding: 15px;
+}
+
+nav a {
+  color:black;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 16px;
+}
+
+nav a:hover {
+  background-color:white;
+  border-radius: 5px;
+}
+
+/* Mobile View - Burger Menu */
+.navbar-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+  }
+
+  nav a:not(.navbar-toggle) {
+    display: none;
+  }
+
+  nav.open a {
+    display: block;
+  }
+}
+
+    .product-img {
+      max-height: 300px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .product-img:hover {
+      transform: scale(1.03);
+    }
+
+    .rating {
+      font-size: 1.2rem;
+      color: #ffc107;
+    }
+
+    .logo-container img {
+      padding: 10px;
+      margin-top: 0px;
+      margin-left: 50px;
+    }
+
+    .hero-btn {
+      text-decoration: none;
+      padding: 12px 30px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 18px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .hero-btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      color: #333;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: popupFadeIn 0.4s ease;
+      position: relative;
+    }
+
+    .popup-content a {
+      color: #4CAF50;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .popup-content a:hover {
+      text-decoration: underline;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    footer.custom-footer {
+    background-color: #4CAF50;
+    color: black;
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex: 1 1 30%;
+    padding: 10px;
+  }
+
+  .footer-section h5 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+
+  /* Social Media Icons */
+  .footer-social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .footer-social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+  }
+
+  .footer-social-icons a:hover {
+    color: #388e3c;
+  }
+
+  /* Mobile View */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-section {
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-social-icons {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+    @keyframes popupFadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+  <style>
+    html body .goog-te-banner-frame,
+    html body .goog-te-banner-frame.skiptranslate,
+    html body body {
+      top: 0 !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo-section">
+    <img src="logo.jpeg" alt="Logo">
+    <span class="brand-name">PAAVAI MUSHROOM FARM</span>
+  </div>
+  <nav id="navbar">
+    <div class="navbar-toggle" id="navbar-toggle">&#9776;</div>
+    <a href="index.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="about.html">About Us</a>
+  </nav>
+  <div id="google_translate_element"></div>
+</header>
+
+<!-- Product Section -->
+<div class="container my-5">
+
+  <!-- Product 1 -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="milky mushroom.webp" class="card-img-top img-fluid rounded product-img" alt="Milky mushroom">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 45px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Milky Mushrooms</h2>
+          <p><strong>Price:</strong> ₹250.00</p>
+          <p><strong>Weight:</strong> 1Kg</p>
+          <p class="text-muted">Milky mushrooms (Calocybe indica) are a tropical variety known for their thick, white flesh and excellent shelf life. Rich in protein, fiber, and essential nutrients, they are highly valued for their nutritional benefits and robust texture, making them ideal for a variety of culinary uses</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️☆</div>
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product 2 -->
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5 d-flex justify-content-end">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="oyster.jpg" class="card-img-top img-fluid rounded product-img" alt="Spicy Mango Pickle">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 10px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Oyster Mushrooms</h2>
+          <p><strong>Price:</strong> ₹250.00</p>
+          <p><strong>Weight:</strong> 1kg</p>
+          <p class="text-muted">🌿 Oyster Mushrooms
+            Oyster mushrooms (Pleurotus ostreatus) are soft, flavorful, and packed with nutrients. Rich in protein, vitamins, and antioxidants, they support immunity and are great for healthy diets.
+            
+            Perfect for stir-fries, curries, soups, and more, they soak up flavors beautifully. At Paavai Mushroom Farm, we grow them fresh, chemical-free, and with care — straight from our farm to your kitchen!</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️⭐️</div>
+          
+         
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="mango-pickle.webp" class="card-img-top img-fluid rounded product-img" alt="Milky mushroom">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 45px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Mushroom Pickle</h2>
+          <p><strong>Price:</strong> ₹80.00</p>
+          <p><strong>Weight:</strong> 100g</p>
+          <p class="text-muted">🍄 Mushroom Pickle
+            Spice up your meals with our homemade Mushroom Pickle! Made with tender mushrooms, traditional spices, and pure oil, this tangy and flavorful pickle is a perfect side for rice, rotis, and snacks.
+            
+            At Paavai Mushroom Farm, we prepare our pickles hygienically with no added preservatives — just authentic taste in every bite. A must-try for every pickle lover!</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️☆</div>
+          
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5 align-items-center">
+    <div class="col-md-5">
+      <div class="card shadow-sm border-0 position-relative">
+        <img src="Biscuits.png" class="card-img-top img-fluid rounded product-img" alt="Milky mushroom">
+        <img src="logo.jpeg" class="position-absolute" style="top: 10px; left: 45px; width: 60px; height: auto; z-index: 2;" alt="Logo">
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 class="card-title">Mushroom Biscuits</h2>
+          <p><strong>Price:</strong> ₹250.00</p>
+          <p><strong>Weight:</strong> 1Kg</p>
+          <p class="text-muted">🍪 Mushroom Biscuits
+            Crunchy, healthy, and delicious — our Mushroom Biscuits are the perfect snack for all ages! Made with real mushroom powder, whole grains, and a hint of spice, they’re packed with flavor and nutrients.
+            
+            At Paavai Mushroom Farm, we blend health and taste to create biscuits that are:
+            
+            Rich in fiber and protein
+            
+            Low in sugar and preservatives
+            
+            Ideal for tea-time or lunchbox snacks</p>
+          <div class="rating mb-3">⭐️⭐️⭐️⭐️☆</div>
+         
+          <p><em>Available for in-person sales only. Please visit us during store hours to purchase. or Make a simple call to place your orders</em></p>
+          <div class="button-container">
+            <a href="#" class="hero-btn">Buy Now</a>
+          </div>
+
+          <!-- Popup -->
+          <div id="popup" class="popup">
+            <div class="popup-content">
+              <span class="close-btn">&times;</span>
+              <p><strong>YOU CAN PLACE YOUR ORDER BY SIMPLY CALLING</strong><br>📞 <a href="tel:+91 9360262443">+91 9360262443</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+
+<footer class="custom-footer">
+  <div class="footer-container">
+    <!-- Contact Us Section -->
+    <div class="footer-section contact-us">
+      
+      <h5 style="font-size: 28px;"> 📞 Contact Us</h5>
+      <p><i class="fas fa-map-marker-alt"></i> 1007, North Street, O.koothur(po)</p>
+      <p>Ariyalur District, 621705</p>
+      <p><i class="fas fa-phone"></i> <a href="tel:+919360262443">+91 9360262443</a></p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:arulkaruppu8@gmail.com">arulkaruppu8@gmail.com</a></p>
+    </div>
+
+    <!-- Quick Links Section -->
+    <div class="footer-section quick-links">
+      <h5 style="font-size:28px">🔗 Quick Links  </h5>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="product.html"><i class="fas fa-box-open"></i> Products</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us Section -->
+    <div class="footer-section follow-us">
+      <h5 style="font-size: 28px;">📲 Follow Us</h5> <!-- Enlarged text -->
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919360262443" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <p>&copy; 2025 <strong>Paavai Mushroom Farm</strong>. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Bootstrap & JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Popup Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buyBtns = document.querySelectorAll('.hero-btn'); // Select all "Buy Now" buttons
+    const popups = document.querySelectorAll('.popup'); // Select all popups
+    const closeBtns = document.querySelectorAll('.close-btn'); // Select all close buttons
+
+    // Loop through all "Buy Now" buttons and add an event listener for each one
+    buyBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function (event) {
+        event.preventDefault();
+        popups[index].style.display = 'flex'; // Show the corresponding popup
+      });
+    });
+
+    // Loop through all close buttons and add an event listener for each one
+    closeBtns.forEach((btn, index) => {
+      btn.addEventListener('click', function () {
+        popups[index].style.display = 'none'; // Hide the corresponding popup
+      });
+    });
+
+    // Close the popup if clicked outside the popup content
+    popups.forEach((popup, index) => {
+      popup.addEventListener('click', function (e) {
+        if (e.target === popup) {
+          popups[index].style.display = 'none'; // Hide the corresponding popup
+        }
+      });
+    });
+  });
+
+</script>
+<!-- Cookie handling & language apply FIRST -->
+<script>
+  // Set default language based on cookie (before Google loads)
+  (function() {
+    var lang = (document.cookie.match(/(^|;\s*)googtrans=\/en\/(\w+)/) || [])[2];
+    if (lang) {
+      var newCookie = "/en/" + lang;
+      document.cookie = "googtrans=" + newCookie + ";path=/";
+      document.cookie = "googtrans=" + newCookie + ";path=/;domain=" + location.hostname;
+    }
+  })();
+</script>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,ta',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  // Save user-selected language to cookie
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new MutationObserver(() => {
+      const iframe = document.querySelector('iframe.goog-te-menu-frame');
+      if (iframe) {
+        try {
+          const items = iframe.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+          items.forEach(span => {
+            span.addEventListener('click', function() {
+              const lang = span.innerText.toLowerCase().includes("tamil") ? 'ta' : 'en';
+              const val = '/en/' + lang;
+              document.cookie = 'googtrans=' + val + ';path=/';
+              document.cookie = 'googtrans=' + val + ';path=/;domain=' + location.hostname;
+            });
+          });
+        } catch (err) {
+          console.warn("Translate frame error", err);
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+<script>
+  const navbarToggle = document.getElementById("navbar-toggle");
+  const navbar = document.getElementById("navbar");
+
+  navbarToggle.addEventListener("click", () => {
+    navbar.classList.toggle("open");
+  });
+</script>
+
+
+</body>
+</html>

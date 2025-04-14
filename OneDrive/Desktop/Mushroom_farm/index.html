@@ -4,13 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paavai Mushroom Farm</title>
-
+  <link rel="icon" type="image/jpeg" href="logo.jpeg">
   <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <!-- AOS Library -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+    html body .goog-te-banner-frame,
+    html body .goog-te-banner-frame.skiptranslate,
+    html body body {
+      top: 0 !important;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -19,21 +27,30 @@
       <img src="logo.jpeg" alt="Logo">
       <span class="brand-name">PAAVAI MUSHROOM FARM</span>
     </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Process</a>
-      <a href="#">Contact</a>
+    <nav id="navbar">
+      <div class="navbar-toggle" id="navbar-toggle">&#9776;</div>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="about.html">About Us</a>
     </nav>
+    <div id="google_translate_element"></div>
   </header>
+  
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
       <h1>Welcome to PAAVAI MUSHROOM FARM</h1>
-      <p>Empowering Women • Cultivating Freshness • Sustaining Nature</p>
+      <p>Grown with Care • Harvested for Freshness • Rooted in Nature</p>
+  
+      <!-- Centered Button -->
+      <div class="button-container">
+        <a href="product.html" class="hero-btn">Explore our Products</a>
+      </div>
     </div>
   </section>
+  
+  <h2 class="section-title">Why Choose Paavai Mushroom Farm?</h2>
 
   <!-- Cards Section -->
   <section class="cards">
@@ -56,6 +73,9 @@
   </section>
 
   <!-- Process Steps -->
+   <center>
+    <h1>The Path to Purity: 4 Steps of Organic Mushroom Cultivation</h1>
+   </center>
   <section class="section">
     <div class="container">
       <div class="left" data-aos="fade-right" data-aos-duration="1500">
@@ -63,7 +83,9 @@
       </div>
       <div class="right" data-aos="fade-left" data-aos-duration="1500">
         <h2>Step 1: Quality Harvest</h2>
-        <p>We carefully harvest our mushrooms ensuring freshness and maximum nutrition for our consumers.</p>
+        <p>We harvest our mushrooms at the peak of their freshness, using clean and precise techniques to preserve their natural flavor and nutritional value. Each mushroom is handpicked to ensure only the highest quality reaches our customers.</p>
+        <p>Every mushroom is gently handpicked at the right time to retain its rich nutrients and earthy aroma. We follow eco-friendly harvesting methods that prioritize both quality and sustainability, ensuring a healthy product straight from farm to fork.</p>
+        
       </div>
     </div>
   </section>
@@ -75,7 +97,9 @@
       </div>
       <div class="right" data-aos="fade-left" data-aos-duration="1500">
         <h2>Step 2: Natural Processing</h2>
-        <p>We use organic and sustainable methods to clean and process mushrooms without harming their nutrients.</p>
+        <p>Our mushrooms are processed using completely organic and sustainable practices that preserve their natural nutrients. We avoid chemical treatments and harsh methods, focusing instead on gentle cleaning and drying techniques that maintain the mushroom's texture, flavor, and health benefits.</p>
+        <p>We embrace nature’s rhythm in every step of our processing. By using clean water, manual handling, and eco-friendly techniques, we ensure our mushrooms stay free from chemicals while keeping their nutrients intact. It’s our way of respecting both the Earth and your health.</p>
+
       </div>
     </div>
   </section>
@@ -86,16 +110,136 @@
         <img src="naturally_grown.webp" alt="Step 3">
       </div>
       <div class="right" data-aos="fade-left" data-aos-duration="1500">
-        <h2>Step 3: Naturally Grown Mushrooms</h2>
-        <p>Every mushroom is carefully packed to preserve its freshness and quality, ensuring it reaches you in perfect condition.</p>
+        <h2>Step 3: Naturally Grown Mushrooms & Safety Packaging</h2>
+        <p>We grow our mushrooms naturally in a chemical-free environment using organic compost and sustainable techniques. Each batch is nurtured with care to ensure purity, freshness, and superior taste.</p>
+        <p>Your health matters to us. That’s why we use clean, secure, and environmentally friendly packaging that keeps our mushrooms fresh and ready to cook. From farm to kitchen, we ensure safety and hygiene every step of the way.</p>
+
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="container">
+      <div class="left" data-aos="fade-right" data-aos-duration="1500">
+        <img src="safety_deliver.avif" alt="Step 4">
+      </div>
+      <div class="right" data-aos="fade-left" data-aos-duration="1500">
+        <h2>Step 4: Safe & Reliable Delivery</h2>
+        <p>Our journey doesn’t stop at packaging. We ensure that every mushroom batch is delivered safely, maintaining the same level of freshness and hygiene as when it left the farm. With temperature-controlled storage and timely logistics, your order arrives crisp, clean, and ready to enjoy.</p>
+        <p>We partner with trusted delivery services to ensure quick and damage-free transportation, so the natural goodness of our mushrooms reaches your doorstep without compromise.</p>
+      </div>
+    </div>
+  </section>
+
+  
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
+<!-- Add Font Awesome to <head> -->
+<!-- Add to your <head> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <footer class="custom-footer">
+    <div class="footer-container">
+      <!-- Contact Us Section -->
+      <div class="footer-section contact-us">
+        
+        <h5 style="font-size: 28px;"> 📞 Contact Us</h5>
+        <p><i class="fas fa-map-marker-alt"></i> 1007, North Street, O.koothur(po)</p>
+        <p>Ariyalur District, 621705</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+919360262443">+91 9360262443</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:arulkaruppu8@gmail.com">arulkaruppu8@gmail.com</a></p>
+      </div>
+  
+      <!-- Quick Links Section -->
+      <div class="footer-section quick-links">
+        <h5 style="font-size:28px">🔗 Quick Links  </h5>
+        <ul>
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="product.html"><i class="fas fa-box-open"></i> Products</a></li>
+          <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- Follow Us Section -->
+      <div class="footer-section follow-us">
+        <h5 style="font-size: 28px;">📲 Follow Us</h5> <!-- Enlarged text -->
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/919360262443" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  
+    <div class="text-center">
+      <p>&copy; 2025 <strong>Paavai Mushroom Farm</strong>. All rights reserved.</p>
+    </div>
+  </footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+
+<!-- Google Translate Script -->
+<!-- Cookie handling & language apply FIRST -->
+<script>
+  // Set default language based on cookie (before Google loads)
+  (function() {
+    var lang = (document.cookie.match(/(^|;\s*)googtrans=\/en\/(\w+)/) || [])[2];
+    if (lang) {
+      var newCookie = "/en/" + lang;
+      document.cookie = "googtrans=" + newCookie + ";path=/";
+      document.cookie = "googtrans=" + newCookie + ";path=/;domain=" + location.hostname;
+    }
+  })();
+</script>
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'en,ta',
+      layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+    }, 'google_translate_element');
+  }
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  // Save user-selected language to cookie
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new MutationObserver(() => {
+      const iframe = document.querySelector('iframe.goog-te-menu-frame');
+      if (iframe) {
+        try {
+          const items = iframe.contentDocument.querySelectorAll('.goog-te-menu2-item span.text');
+          items.forEach(span => {
+            span.addEventListener('click', function() {
+              const lang = span.innerText.toLowerCase().includes("tamil") ? 'ta' : 'en';
+              const val = '/en/' + lang;
+              document.cookie = 'googtrans=' + val + ';path=/';
+              document.cookie = 'googtrans=' + val + ';path=/;domain=' + location.hostname;
+            });
+          });
+        } catch (err) {
+          console.warn("Translate frame error", err);
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+
+<script>
+  const navbarToggle = document.getElementById("navbar-toggle");
+  const navbar = document.getElementById("navbar");
+
+  navbarToggle.addEventListener("click", () => {
+    navbar.classList.toggle("open");
+  });
+</script>
+
 </body>
 </html>

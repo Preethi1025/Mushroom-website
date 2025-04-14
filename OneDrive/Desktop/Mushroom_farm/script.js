@@ -1,14 +1,16 @@
-// Initialize AOS for animation
-AOS.init();
 
-// Card observer animation
+AOS.init({
+  once: false,
+});
+
 const cards = document.querySelectorAll('.card');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
-      observer.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove('show'); 
     }
   });
 }, { threshold: 0.3 });
